@@ -1,0 +1,32 @@
+{
+  "name": "electrolyte-assembly-mapper",
+  "version": "1.0.0",
+  "description": "Assembly mapper and loader for Electrolyte",
+  "author": "Bran van der Meer <branmovic@gmail.com> (http://bran.name/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/branneman/electrolyte-assembly-mapper/issues"
+  },
+  "homepage": "https://github.com/branneman/electrolyte-assembly-mapper#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/branneman/electrolyte-assembly-mapper.git"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4",
+    "standard": "*"
+  },
+  "standard": {
+    "env": {
+      "jest": true
+    }
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "scripts": "^0.1.0"
+  }
+}
