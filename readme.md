@@ -1,4 +1,6 @@
 # electrolyte-assembly-mapper
+[![Build Status](https://travis-ci.org/branneman/electrolyte-assembly-mapper.svg?branch=master)](https://travis-ci.org/branneman/electrolyte-assembly-mapper)
+
 An Assembly Mapper and Loader for the [Electrolyte](https://github.com/jaredhanson/electrolyte) DI/IoC Container in Node.js.
 
 This npm module can be used to map any dependency loaded via Electrolyte to another dependency, like a stub instead of the real implementation.
