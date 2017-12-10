@@ -1,18 +1,24 @@
 'use strict'
 
 var debug = require('debug')('electrolyte-assembly-mapper')
-var path = require('path')
 var existsSync = require('fs').existsSync
+var path = require('path')
 var scripts = require('scripts')
 
 module.exports = factory
+module.exports.dirLoader = dirLoader
+module.exports.mapperLoader = mapperLoader
+module.exports.loadAll = loadAll
+module.exports.loadOne = loadOne
+module.exports.destructureArgs = destructureArgs
+module.exports.map = map
 
 function factory (mapperFile) {
   var mapperFilePath = path.resolve(mapperFile)
   if (existsSync(mapperFilePath)) {
     debug('Loading mapper file:', mapperFilePath)
     var mapping = require(mapperFilePath)
-    return createMapperLoader(mapping)
+    return mapperLoader(mapping)
   }
   debug('Not using supplied mapper file: ' + mapperFile)
   return dirLoader
@@ -25,7 +31,7 @@ function dirLoader (/* [dirs, ...] */) {
   }
 }
 
-function createMapperLoader (mapping) {
+function mapperLoader (mapping) {
   return function mapperLoader (/* [dirs, ...] */) {
     var dirs = destructureArgs(arguments)
     return function (id) {
